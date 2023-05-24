@@ -1,0 +1,41 @@
+<style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        /* Light grey */
+        border-top: 16px solid #3498db;
+        /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    // <![CDATA[
+    function preloader() {
+        document.getElementsByClassName("loader")[0].style.display = "none";
+    } //preloader
+    function showloader() {
+        document.getElementsByClassName("loader")[0].style.display = "block";
+    } //preloader
+    window.onload = preloader;
+    // ]]>
+</script>
+
+<body onload="preloader()">
+    <div class="loader"></div>
+    <form method="POST" action="/">
+        <input type="text" name="input_data" style="width: 1000px;">
+        <button type="submit" onclick="showloader()">Submit</button>
+    </form>
+</body>
